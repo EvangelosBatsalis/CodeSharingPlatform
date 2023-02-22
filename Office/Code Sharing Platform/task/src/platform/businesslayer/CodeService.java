@@ -32,11 +32,11 @@ public class CodeService{
 //        this.codeRepository = codeRepository;
 //    }
 
-    public int saveCode(Code code){
+    public Code saveCode(Code code){
         code.setLocalDateTimeNow();
-        Code codeResponseSave = codeRepository.save(code);
+        Code codeResponse = codeRepository.save(code);
 //        codeRepository.save(code);
-        return codeResponseSave.getId();
+        return codeResponse;
     }
 
     public void getCodeById(int id){
@@ -56,26 +56,26 @@ public class CodeService{
         return codeList;
     }
 
+    @Deprecated(since = "Version 3", forRemoval = true)
     //return last 10 from the list
     public List<Code> getLastTenCodeList() {
         List<Code> newList = new ArrayList<>();
         if(codeList.size()>9) {
-//            System.out.println("if"); //remove it
             for (int i = codeList.size() - 1; i > codeList.size() - 11; i--) {
                 newList.add(codeList.get(i));
             }
         }else{
-//            System.out.println("else"); //remove it
             newList.addAll(codeList);
             Collections.reverse(newList);
         }
         return newList;
 }
-
-//simple getSize
+    @Deprecated(since = "Version 3", forRemoval = true)
+    //simple getSize
     public int getCodeListSize(){
         return codeList.size();
     }
+
 
     //Names from documentation
     //https://docs.spring.io/spring-data/jpa/docs/current/reference/html/#reference
@@ -84,6 +84,11 @@ public class CodeService{
         System.out.println(id);
         return codeRepository.findFirst10ByOrderByIdDesc();
 
+    }
+
+    public Code getCodeByUUID(String uuid){
+        Code newcode = codeRepository.findByCodeUUID(uuid);
+        return newcode;
     }
 
 }

@@ -635,6 +635,6 @@ files:
 - name: src/resources/templates/codeNew.ftlh
   visible: true
   learner_created: true
-feedback_link: https://hyperskill.org/projects/130/stages/694/implement#comment
+feedback_link: https://hyperskill.org/learn/step/11029#comment
 status: Solved
 record: 2

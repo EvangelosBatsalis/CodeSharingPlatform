@@ -19,25 +19,6 @@ files:
 
     }
   learner_created: false
-- name: src/resources/application.properties
-  visible: true
-  text: |-
-    server.port=8889
-    management.endpoints.web.exposure.include=*
-    management.endpoint.shutdown.enabled=true
-
-    spring.datasource.url=jdbc:h2:file:../snippets
-    spring.datasource.driverClassName=org.h2.Driver
-    spring.datasource.username=sa
-    spring.datasource.password=password
-
-    spring.jpa.database-platform=org.hibernate.dialect.H2Dialect
-    spring.jpa.hibernate.ddl-auto=update
-
-    spring.h2.console.enabled=true
-    spring.h2.console.settings.trace=false
-    spring.h2.console.settings.web-allow-others=false
-  learner_created: false
 - name: build.gradle
   visible: true
   text: |-
@@ -958,6 +939,25 @@ files:
         }
     }
   learner_created: false
-feedback_link: https://hyperskill.org/projects/130/stages/696/implement#comment
+- name: src/resources/application.properties
+  visible: true
+  text: |-
+    server.port=8889
+    management.endpoints.web.exposure.include=*
+    management.endpoint.shutdown.enabled=true
+
+    spring.datasource.url=jdbc:h2:file:../snippets
+    spring.datasource.driverClassName=org.h2.Driver
+    spring.datasource.username=sa
+    spring.datasource.password=password
+
+    spring.jpa.database-platform=org.hibernate.dialect.H2Dialect
+    spring.jpa.hibernate.ddl-auto=update
+
+    spring.h2.console.enabled=true
+    spring.h2.console.settings.trace=false
+    spring.h2.console.settings.web-allow-others=false
+  learner_created: false
+feedback_link: https://hyperskill.org/learn/step/11031#comment
 status: Unchecked
 record: -1

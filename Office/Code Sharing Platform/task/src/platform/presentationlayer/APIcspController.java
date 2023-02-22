@@ -4,7 +4,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-import org.springframework.web.server.ResponseStatusException;
 import platform.businesslayer.Code;
 import platform.businesslayer.CodeService;
 import platform.persistencelayer.CodeRepository;
@@ -29,19 +28,23 @@ public class APIcspController {
 
     @PostMapping("api/code/new")
     public ResponseEntity<Map<String, String>> postApiEndoint(@RequestBody Code code){
-//        codeMap.put("id",String.valueOf(codeEntity.getId()));
-
-//        codeService.setCodeList(code);
-
+        Map<String,String> returnUuidMap = new HashMap<>();
         codeService.saveCode(code);
-        codeMap.put("id", String.valueOf(code.getId()));
+        returnUuidMap.put("id",code.getCodeUUID());
+        System.out.println(code.getCodeUUID());
+        return new ResponseEntity<>(returnUuidMap, HttpStatus.OK);
 
+//        codeService.saveCode(code);
+//        codeMap.put("id", String.valueOf(code.getId()));
+//        return new ResponseEntity<>(codeMap, HttpStatus.OK);
+//        codeService.setCodeList(code);
 //        codeMap.put("id",String.valueOf(codeEntity.getId()));
-        return new ResponseEntity<>(codeMap, HttpStatus.OK);
+//        codeMap.put("id",String.valueOf(codeEntity.getId()));
     }
 
-    @GetMapping("api/code/{id}")
-    public ResponseEntity<Code> getApiEnpoint(@PathVariable int id){
+    @GetMapping("api/code/{uuid}")
+    public ResponseEntity<Code> getApiEnpoint(@PathVariable String uuid){
+        return new ResponseEntity<>(codeService.getCodeByUUID(uuid),HttpStatus.OK);
 //
 //        if(codeService.getCodeListSize() == 0){
 //            throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "List is empty");
@@ -50,7 +53,6 @@ public class APIcspController {
 //        }else{
 //            return new ResponseEntity<>(codeService.getReturnCodeList().get(id-1), HttpStatus.OK);
 //        }
-        return new ResponseEntity<>(codeRepository.findCodeById(id),HttpStatus.OK);
 
     }
 
@@ -60,5 +62,11 @@ public class APIcspController {
         return new ResponseEntity<>(codeService.getLastTen(),HttpStatus.OK);
     }
 
-
+//    @GetMapping("api/code/test")
+//    public List<Code> getApiEnpoint(){
+//        String uuid = "05a542bc-63bf-4eb0-8de8-281d61bb4ddf";
+//        List<Code> newcode = codeService.getCodeByUUID(uuid);
+////        System.out.println(newcode.getCode() );
+//        return newcode;
+//    }
 }

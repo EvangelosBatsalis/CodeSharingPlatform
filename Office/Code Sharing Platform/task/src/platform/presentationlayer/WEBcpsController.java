@@ -15,13 +15,24 @@ public class WEBcpsController {
     @Autowired
     CodeService codeService;
 
-    @GetMapping(value = "/code/{id}", produces = MediaType.TEXT_HTML_VALUE)
-    public String getCodeNewCreationEndPoint2(Model model,@PathVariable int id) {
+    @GetMapping(value = "/code/{uuid}", produces = MediaType.TEXT_HTML_VALUE)
+    public String getCodeNewCreationEndPoint2(Model model,@PathVariable String uuid) {
 //        Code code = codeService.getCodeList().get(id-1);
-        Code code = codeService.getCodeRepository().findCodeById(id);
-
+//        Code code = codeService.getCodeRepository().findCodeById(id);
+        Code code = codeService.getCodeByUUID(uuid);
         model.addAttribute("date",code.getLocalDateTime().toString());
         model.addAttribute("code_snipet",code.getCode().toString());
+        if(code.getRemainingViews() == 0){
+            model.addAttribute("time_restriction","unlimited");
+        }else{
+            model.addAttribute("time_restriction",code.getRemainingTime());
+        }
+        if(code.getRemainingTime() == 0) {
+            model.addAttribute("views_restriction", "unlimited");
+        }else{
+            model.addAttribute("views_restriction",code.getRemainingViews());
+
+        }
         return "returnNthCode";
     }
 
@@ -29,6 +40,7 @@ public class WEBcpsController {
     public String getCodeNewCreationEndPointTest(Model model) {
         return "codeNew";
     }
+
     @GetMapping("code/latest")
     public String getWebLastTen(Model model){
 //        model.addAttribute("snippets",codeService.getLastTenCodeList());

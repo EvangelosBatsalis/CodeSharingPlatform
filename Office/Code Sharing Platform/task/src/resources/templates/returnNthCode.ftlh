@@ -27,11 +27,13 @@
     </head>
     <body>
         <ul>
-                <span id="load_date">${date}</span>
-                <br>
-                <pre id="code_snippet"><code>${code_snipet}</code></pre>
+            <span id="load_date">${date}</span>
+            <pre id="code_snippet"><code>${code_snipet}</code></pre>
+            <span id="time_restriction">The code will be available for ${time_restriction!'unlimited'} seconds </span>
             <br>
-            <br>
+            <span id="views_restriction">${views_restriction} views remaining</span>
+
+
         </ul>
     </body>
 </html>
