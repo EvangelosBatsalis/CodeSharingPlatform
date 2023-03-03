@@ -2,7 +2,7 @@
 <p>"Code Sharing Platform" is a simple application from Hyperskill academy "Java project" from "Backend Development path" that allows you to share code, set views and time limits.
 Using Spring JVM and some business logic. H2 DB for persistent memory with JPA crud repository. View model through apache freemarker as java template engine and API endpoints (API tests through Postman).
 <br><br>Link for Deployed Spring Boot web application on Amazon EC2 on AWS: "Under Construction Soon it will be available"</p>
-<h1>Hyperskill Description:</h1>
+<h1>Hyperskill Project Description:</h1>
 <p>Sometimes, it's useful to have a tool that can help you share a piece of code with other programmers. Actually, there is a website called Pastebin that does exactly that. A huge downside of Pastebin is that every piece of code you share automatically becomes available for the public. This could present a problem since many programmers work under the NDA (Non-disclosure agreement) which prohibits the use of such services to prevent the source code from leaking.
 
 If there is a team of programmers who work in the same company and want to exchange pieces of code, they can solve this problem by using their own implementation of Pastebin. Such a web service is supposed to be accessible only locally, not via the Internet. In this project, you will write a service just like that.
