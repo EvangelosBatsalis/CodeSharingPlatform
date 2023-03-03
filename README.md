@@ -24,8 +24,6 @@ As you're working on the project, you will implement two types of interfaces: AP
 <li><code>viewsLimit</code> - allowed number of views (number or null if there is no limit)</li>
 </ul>
 </li>
-<br><br>
-<strong>Web HTML:</strong>
 <li>
 <p><code>GET /api/code/all</code> - return JSON array with all snippets stored in database in the format above</p>
 </li>
@@ -38,7 +36,8 @@ RequestBody should be JSON with the following fields:</p>
 </ul>
 </li>
 </ol>
-
+<br><br>
+<strong>Web HTML:</strong>
 <li><code>GET /code/{uuid}</code> - return page with code snippet</li>
 <li><code>GET /code/new</code> - return page with submit form</li>
 <li><code>GET /code/all</code> - return page with all snippets stored in database</li>
