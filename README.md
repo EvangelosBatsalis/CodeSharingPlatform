@@ -18,9 +18,9 @@ As you're working on the project, you will implement two types of interfaces: AP
 <li><code>snippetUUID</code> - UUID (string)</li>
 <li><code>code</code> - code (string)</li>
 <li><code>header</code> - title (string)</li>
-<li><code>createDate</code> - date of creation (string in <code>yyyy-MM-dd'T'HH-mm-ss</code> format)</li>
+<li><code>createDate</code> - date of creation (string in <code>dd-MM-yyy HH-mm-ss</code> format)</li>
 <li><code>views</code> - all views count (number)</li>
-<li><code>deleteDate</code> - date until snippet will be available (string in <code>yyyy-MM-dd'T'HH-mm-ss</code> format or null if there is no limit)</li>
+<li><code>deleteDate</code> - date until snippet will be available (string in <code>dd-MM-yyy HH-mm-ss</code> format or null if there is no limit)</li>
 <li><code>viewsLimit</code> - allowed number of views (number or null if there is no limit)</li>
 </ul>
 </li>
