@@ -44,11 +44,11 @@ RequestBody should be JSON with the following fields:</p>
 </ol>
 <hr>
 <strong>Compile and Run:</strong>
-<div class="snippet-clipboard-content notranslate position-relative overflow-auto" data-snippet-clipboard-copy-content="git clone https://github.com/Dalvikk/CodeSharingPlatform
-cd ./CodeSharingPlatform/
-./gradlew.bat bootJar
-java -jar ./build/libs/snippet.jar"><pre class="notranslate"><code>git clone https://github.com/Dalvikk/CodeSharingPlatform
+</code></pre></div>
+
+```
+git clone https://github.com/EvangelosBatsalis/CodeSharingPlatform
 cd ./CodeSharingPlatform/
 ./gradlew.bat bootJar
 java -jar ./build/libs/snippet.jar
-</code></pre></div>
+```
