@@ -1,5 +1,5 @@
 <h1 align="center"> Welcome </h1>
-<p>A simple application from Hyperskill academy <Java project> from <Backend Development path> that allows you to share code, set views and time limits.
+<p>A simple application from Hyperskill academy "Java project" from "Backend Development path" that allows you to share code, set views and time limits.
 Using Spring JVM and some business logic. H2 DB for persistent memory with JPA crud repository. View model through apache freemarker as java template engine and API endpoints (API tests through Postman).
 <br><br>Link for Deployed Spring Boot web application on Amazon EC2 on AWS: "Under Construction Soon it will be available"</p>
 <h1>Hyperskill Description:</h1>
